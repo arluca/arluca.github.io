@@ -1,0 +1,594 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fits ForYourBody</title>
+    <style> 
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            color: #2c2c2c;
+        }
+
+        .header {
+            background: #000000;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .mission {
+            background: #f8f9fa;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .mission h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .mission p {
+            font-size: 18px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .hero {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .hero-image {
+            background: #f1f3f4;
+            height: 400px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        .photo-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .photo-placeholder {
+            background: #f1f3f4;
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        .how-works {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .how-works h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .works-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .work-box {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .work-box:hover {
+            transform: translateY(-8px);
+        }
+
+        .work-box .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .work-box h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .work-box p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .btn {
+            background: #2c2c2c;
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #000;
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .upload-section {
+            padding: 80px 0;
+        }
+
+        .upload-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .form-card {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-card h3 {
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+
+        .upload-area {
+            border: 3px dashed #ddd;
+            padding: 50px 20px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 8px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        .upload-area:hover {
+            border-color: #999;
+            background: #f0f0f0;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            background: #fafafa;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #2c2c2c;
+            background: white;
+        }
+
+        .style-prefs {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        .style-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            border: 2px solid #ddd;
+            margin-top: 25px;
+        }
+
+        .style-btn {
+            padding: 15px;
+            border: none;
+            background: white;
+            cursor: pointer;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s ease;
+        }
+
+        .style-btn:hover {
+            background: #f0f0f0;
+        }
+
+        .style-btn.active {
+            background: #2c2c2c;
+            color: white;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid, .upload-grid, .photo-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .hero h2 {
+                font-size: 36px;
+            }
+
+            .works-boxes {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>FITS FOR YOUR BODY</h1>
+    </header>
+
+    <section class="mission">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <p>We believe everyone deserves to feel confident in their clothing choices. Our platform addresses clothing and body insecurity by providing a supportive, evidence-based approach to personal styling. By serving as a helpful middleman in deciding what to wear, we empower users to embrace their unique body type and feel their most confident self through fashion choices that truly work for them.</p>
+        </div>
+    </section>
+
+    <div id="welcome-screen">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div>
+                        <h2>Discover Your Perfect Style</h2>
+                        <p>Get personalized, research-backed fashion recommendations tailored to your unique body type and current weather. Our evidence-based approach helps you feel confident and look amazing in styles that truly work for you.</p>
+                        <button class="btn" onclick="startUpload()">Begin Style Journey</button>
+                    </div>
+                    <div class="hero-image">
+                        Fashion Photography Placeholder 1
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="photo-section">
+            <div class="container">
+                <div class="photo-grid">
+                    <div class="photo-placeholder">
+                        Fashion Photography Placeholder 2
+                    </div>
+                    <div class="photo-placeholder">
+                        Fashion Photography Placeholder 3
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-works">
+            <div class="container">
+                <h2>How It Works</h2>
+                <div class="works-boxes">
+                    <div class="work-box">
+                        <div class="icon">📷</div>
+                        <h3>Upload Photo</h3>
+                        <p>Share a full-body photo for personalized body type analysis. Your privacy is completely protected.</p>
+                    </div>
+                    <div class="work-box">
+                        <div class="icon">🧠</div>
+                        <h3>AI Analysis</h3>
+                        <p>Our advanced algorithm analyzes your unique body proportions and local weather conditions to generate personalized styling recommendations.</p>
+                    </div>
+                    <div class="work-box">
+                        <div class="icon">📚</div>
+                        <h3>Research</h3>
+                        <p>All recommendations are grounded in peer-reviewed academic studies from computer vision and fashion research, including analysis of over 18,000 celebrity images and body measurements.</p>
+                    </div>
+                    <div class="work-box">
+                        <div class="icon">✨</div>
+                        <h3>Style Recommendations</h3>
+                        <p>Receive curated style suggestions with direct Pinterest inspiration links for endless outfit possibilities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="upload-screen" class="hidden">
+        <section class="upload-section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 60px;">
+                    <h2 style="font-size: 42px; margin-bottom: 20px;">Let's Get Started</h2>
+                    <p style="font-size: 20px; color: #666;">Upload your photo and location for personalized recommendations</p>
+                </div>
+
+                <div class="upload-grid">
+                    <div class="form-card">
+                        <h3>Your Photo</h3>
+                        <div onclick="clickUpload()" class="upload-area">
+                            <div id="photo-preview" class="hidden">
+                                <img id="preview-image" style="max-height: 250px; border-radius: 8px; margin-bottom: 20px;" />
+                                <p style="font-size: 14px; color: #666;">Photo uploaded. Click to change.</p>
+                            </div>
+                            <div id="photo-placeholder">
+                                <div style="font-size: 48px; margin-bottom: 20px; color: #999;">📷</div>
+                                <p style="font-size: 18px; margin-bottom: 10px; color: #333;">Upload Full-Body Photo</p>
+                                <p style="font-size: 14px; color: #999;">Your photo stays private and secure</p>
+                            </div>
+                        </div>
+                        <input id="photo-input" type="file" accept="image/*" style="display: none;" />
+                    </div>
+
+                    <div class="form-card">
+                        <h3>Your Location</h3>
+                        <input
+                            id="location-input"
+                            type="text"
+                            placeholder="Enter your city or location"
+                            autocomplete="off"
+                        />
+                        <div style="background: #e3f2fd; border: 1px solid #bbdefb; padding: 20px; border-radius: 4px; margin-top: 20px;">
+                            <p style="font-size: 14px; color: #1565c0;">We use your location to provide weather-appropriate styling recommendations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-prefs">
+                    <h3 style="text-align: center; margin-bottom: 30px;">Style Preferences</h3>
+                    <div class="style-grid">
+                        <button onclick="chooseStyle('all')" id="style-all" class="style-btn active">All</button>
+                        <button onclick="chooseStyle('feminine')" id="style-feminine" class="style-btn">Feminine</button>
+                        <button onclick="chooseStyle('masculine')" id="style-masculine" class="style-btn">Masculine</button>
+                        <button onclick="chooseStyle('unisex')" id="style-unisex" class="style-btn">Unisex</button>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <button id="analyze-btn" onclick="runAnalysis()" class="btn" disabled>
+                        Analyze My Style
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="results-screen" class="hidden">
+        <section style="padding: 80px 0;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 60px;">
+                    <h2 style="font-size: 42px; margin-bottom: 20px;">Your Style Guide</h2>
+                    <p style="font-size: 20px; color: #666;">Evidence-based recommendations for you</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 50px;">
+                    <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                        <h3 style="font-size: 20px; margin-bottom: 15px;">Weather</h3>
+                        <p><span id="weather-temp">22</span>°C in <span id="weather-location">Your City</span></p>
+                        <p style="color: #666;">Partly cloudy</p>
+                    </div>
+                    <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                        <h3 style="font-size: 20px; margin-bottom: 15px;">Body Type</h3>
+                        <p style="font-weight: bold;"><span id="body-type-name">Rectangle</span></p>
+                        <p style="color: #666;" id="body-type-desc">Balanced straight silhouette</p>
+                    </div>
+                </div>
+
+                <div id="recommendations-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px;"></div>
+
+                <div style="text-align: center;">
+                    <button onclick="restart()" class="btn">Try Another Look</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        var userPhoto = null;
+        var userLocation = '';
+        var styleChoice = 'all';
+
+        var bodyData = {
+            rectangle: {
+                name: "Rectangle",
+                description: "Balanced straight silhouette", 
+                strengths: ["Athletic build", "Versatile styling", "Clean lines"]
+            }
+        };
+
+        var recommendations = {
+            rectangle: {
+                feminine: [
+                    { item: "Peplum tops", image: "peplum-top.jpg" },
+                    { item: "Textured dresses", image: "textured-dress.jpg" },
+                    { item: "Ruffled blouses", image: "ruffled-blouse.jpg" }
+                ],
+                masculine: [
+                    { item: "Layered shirts", image: "layered-shirt.jpg" },
+                    { item: "Textured sweaters", image: "textured-sweater.jpg" },
+                    { item: "Cargo pants", image: "cargo-pants.jpg" }
+                ],
+                unisex: [
+                    { item: "Oversized sweaters", image: "oversized-sweater.jpg" },
+                    { item: "Wide-leg pants", image: "wide-leg-pants.jpg" },
+                    { item: "Textured pieces", image: "textured-piece.jpg" }
+                ]
+            }
+        };
+
+        function startUpload() {
+            document.getElementById('welcome-screen').style.display = 'none';
+            document.getElementById('upload-screen').style.display = 'block';
+        }
+
+        function clickUpload() {
+            document.getElementById('photo-input').click();
+        }
+
+        function chooseStyle(style) {
+            styleChoice = style;
+            var buttons = document.querySelectorAll('.style-btn');
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
+            document.getElementById('style-' + style).classList.add('active');
+        }
+
+        function checkInputs() {
+            userLocation = document.getElementById('location-input').value.trim();
+            var btn = document.getElementById('analyze-btn');
+            if (userPhoto && userLocation) {
+                btn.disabled = false;
+            } else {
+                btn.disabled = true;
+            }
+        }
+
+        function runAnalysis() {
+            if (userPhoto && userLocation) {
+                document.getElementById('upload-screen').style.display = 'none';
+                
+                setTimeout(function() {
+                    showResults();
+                }, 1500);
+            }
+        }
+
+        function showResults() {
+            document.getElementById('weather-location').textContent = userLocation;
+            
+            var recsContainer = document.getElementById('recommendations-container');
+            recsContainer.innerHTML = '';
+            
+            var recs = recommendations.rectangle;
+            var types = [
+                { key: 'feminine', title: 'Feminine Styles' },
+                { key: 'masculine', title: 'Masculine Styles' },
+                { key: 'unisex', title: 'Unisex Styles' }
+            ];
+            
+            for (var j = 0; j < types.length; j++) {
+                var type = types[j];
+                if (styleChoice === 'all' || styleChoice === type.key) {
+                    var div = document.createElement('div');
+                    div.style.cssText = 'background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);';
+                    
+                    var html = '<h4 style="font-size: 18px; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;">' + type.title + '</h4>';
+                    for (var k = 0; k < recs[type.key].length; k++) {
+                        var recItem = recs[type.key][k];
+                        var pinterestUrl = 'https://www.pinterest.com/search/pins/?q=' + encodeURIComponent(recItem.item + ' outfit');
+                        html += '<div style="margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0;">';
+                        html += '<div style="background: #f5f5f5; height: 150px; border-radius: 4px; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 12px; border: 1px solid #e0e0e0;">Image: ' + recItem.image + '</div>';
+                        html += '<p style="margin-bottom: 10px; font-weight: 500;">' + recItem.item + '</p>';
+                        html += '<a href="' + pinterestUrl + '" target="_blank" style="background: #E60023; color: white; padding: 8px 16px; font-size: 12px; text-decoration: none; border-radius: 20px; text-transform: uppercase;">Pinterest</a>';
+                        html += '</div>';
+                    }
+                    
+                    div.innerHTML = html;
+                    recsContainer.appendChild(div);
+                }
+            }
+
+            document.getElementById('results-screen').style.display = 'block';
+        }
+
+        function restart() {
+            userPhoto = null;
+            userLocation = '';
+            styleChoice = 'all';
+            document.getElementById('photo-input').value = '';
+            document.getElementById('location-input').value = '';
+            document.getElementById('photo-preview').style.display = 'none';
+            document.getElementById('photo-placeholder').style.display = 'block';
+            chooseStyle('all');
+            checkInputs();
+            document.getElementById('results-screen').style.display = 'none';
+            document.getElementById('welcome-screen').style.display = 'block';
+        }
+
+        document.getElementById('photo-input').addEventListener('change', function(event) {
+            var file = event.target.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    userPhoto = e.target.result;
+                    document.getElementById('preview-image').src = userPhoto;
+                    document.getElementById('photo-preview').style.display = 'block';
+                    document.getElementById('photo-placeholder').style.display = 'none';
+                    checkInputs();
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('location-input').addEventListener('input', checkInputs);
+    </script>
+</body>
+</html>
